@@ -1,6 +1,6 @@
 """ Core classes. """
 
-import copy
+import copy as cp
 
 from sklearn.externals.joblib import Parallel, delayed
 from sklearn.model_selection import cross_val_score, cross_val_predict
