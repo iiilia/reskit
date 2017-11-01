@@ -1,5 +1,6 @@
 """ Core classes. """
 
+import copy
 
 from sklearn.externals.joblib import Parallel, delayed
 from sklearn.model_selection import cross_val_score, cross_val_predict
@@ -285,7 +286,7 @@ class Pipeliner(object):
 
         def remove_unmatched_caching_X(row_keys):
             cached_keys = list(self._cached_X)
-            unmatched_caching_keys = cached_keys.copy()
+            unmatched_caching_keys = cp.copy(cached_keys)
             for row_key, cached_key in zip(row_keys, cached_keys):
                 if not row_key == cached_key:
                     break
